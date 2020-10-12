@@ -11,6 +11,7 @@ In this project you will learn how to use computational techniques to analyze te
 - Choosing task-appropriate data structures (e.g. dictionaries versus lists)
 - Computational methods for characterizing and comparing text
 
+---
 ## How to proceed
 
 In order to get started on the assignment, you should fork this base repository. Once you've forked the repository, clone the repository on your computer.
@@ -28,7 +29,7 @@ You should read this document in a somewhat non-linear/spiral fashion:
 - Your partner cannot be in the same term-project team with you.
 - Only one of you should fork the base repo for this assignment. The one that forks the repo should then add the other team member as a collaborator on Github for that repo.
 
-
+---
 ## Part 1: Harvesting text from the Internet
 
 The goal for Part 1 is for you to get some text from the Internet with the aim of doing something interesting with it down the line. As you approach the assignment, I recommend that you get a feel for the types of text that you can grab using different Python packages. However, before spending too much time going down a particular path on the text acquisition component, you should look ahead to Part 2 to understand some of the things you can do with text you are harvesting. The strength of your mini project will be in combining a source of text with an appropriate technique for language analysis (see Part 2).
@@ -113,14 +114,11 @@ for status in data['statuses']:
 
 When I ran this program the other day I got the following output:
 ```
-Tom Brady Launching Production Co. W/ 'Avengers' Directors, I'm Going Hollywood! via @TMZ https://t.co/L8D7vNhTnT https://t.co/tVWdbi8juE
-RT @FOXSports: Marcellus believes the Patriots are done with Tom Brady.
-
-"Here’s what’s going on in New England, they don’t want Tom Brady…
-RT @PatsNationCP: #Patriots could offer Tom Brady $25M per season
-
-https://t.co/2PwpRrQGdv
-RT @PatsNationCP: The Patriots may be looking to make a major trade.
+The Buffalo Bills' game with Tennessee remains on schedule for Tuesday night after the Titans had no positives Mond… https://t.co/IFk6CQQFPk
+#Broncos debate: Does Denver or New England get more benefit by delaying game (again)? https://t.co/GSD4WkNXlj via @denverpost
+Purtroppo la ⁦@NFL⁩ ha deciso (forse non ha potuto) di non giocare in the bubble e forse si dovrà fermare. I miei ⁦… https://t.co/YiXNNOF9Lu
+RT @easyjanjansen: Sources -- NFL shuts down New England Patriots' facility for 3rd time in 10 days after new positive coronavirus test - E…
+RT @NYDailyNews: The NFL shut down the New England Patriots' facility after one more positive COVID-19 test came back Sunday morning.
 ...
 ```
 
@@ -200,7 +198,7 @@ with open('dickens_texts.pickle','r') as input_file:
 ```
 The result of running this code is that all of the texts in the list variable `charles_dickens_texts` will now be in the list variable `reloaded_copy_of_texts`. In the code that you write for this project you won't want to pickle and then unpickle in the same Python script. Instead, you might want to have a script that pulls data from the web and then pickles them to disk. You can then create another program for processing the data that will read the pickle file to get the data loaded into Python so you can perform some analysis on it.
 
-
+---
 ## Part 2: Analyzing Your Text
 
 ### Characterizing by Word Frequencies
@@ -233,7 +231,7 @@ This program will print out:
 If you perform some natural language processing, you may be able to say something interesting about the text you harvested from the web. For instance, if you listen to a particular Twitter hashtag on a political topic, can you gauge the mood of the country by looking at the sentiment of each tweet that comes by in the stream? Which of recent movies received most negative reviews? There are tons of cool options here!
 
 ### Text Similarity
-It is potentially quite useful to be able to compute the similarity of two texts. Suppose that we have characterized some texts from Project Gutenberg using word frequency analysis. One way to compute the similarity of two texts is to test to what extent when one text has a high count for a particular word the other text also a high count for a particular word. Specifically, we can compute the cosine similarity between the two texts. This strategy involves thinking of the word counts for each text as being high-dimensional vectors where the number of dimensions is equal to the total number of unique words in your text dataset and the entry in a particular element of the vector is the count of how frequently the corresponding word appears in a specific document (if this is a bit vague and you want to try this approach, send professor an e-mail).
+It is potentially quite useful to be able to compute the similarity of two texts. Suppose that we have characterized some texts from Project Gutenberg using word frequency analysis. One way to compute the similarity of two texts is to test to what extent when one text has a high count for a particular word the other text also a high count for a particular word. Specifically, we can compute the cosine similarity between the two texts. This strategy involves thinking of the word counts for each text as being high-dimensional vectors where the number of dimensions is equal to the total number of unique words in your text dataset and the entry in a particular element of the vector is the count of how frequently the corresponding word appears in a specific document (if this is a bit vague and you want to try this approach, send professor a slack DM or an e-mail).
 
 
 ### Text Clustering
@@ -277,6 +275,8 @@ This will generate the following plot. The coordinates don't have any special me
 ### Markov Text Synthesis
 You can use Markov analysis to learn a generative model of the text that you collect from the web and use it to generate new texts. You can even use it to create mashups of multiple texts. One of possibilities in this space would be to to create literary mashups automatically. Again, let professor know if you go this route and we can provide more guidance.
 
+
+---
 ## Part 3: Project Writeup and Reflection
 Please prepare a short (suggested lengths given below) document with the following sections:
 
@@ -298,11 +298,15 @@ From a process point of view, what went well? What could you improve? Other poss
 
 Also discuss your team process in your reflection. How did you plan to divide the work (e.g. split by task, always pair program together, etc.) and how did it actually happen? Were there any issues that arose while working together, and how did you address them? What would you do differently next time?
 
+---
 ## Turning in your assignment
 
 1. Push your completed code to Github repository (depending on which team member's repository is being used to work on the project).
 2. Submit your Project Writeup/Reflection (1 per team, not 1 per person). This can be in the form of either:
     + a PDF document pushed to GitHub, or
     + a project web page (if you choose this route, make sure there is a link to your web page in your `README.md` file in your Github repo.)
-3. Create a pull request to the upstream repository. Learn [Creating a pull request](https://help.github.com/en/desktop/contributing-to-projects/creating-a-pull-request).
-4. **This step is required for everyone.** Zip the entire project folder to a .zip file and submit it on Canvas/Assignments/Assignment 2. Leave the url to your project github repository in the comment area on Canvas.
+3. Create a pull request to the upstream repository. Learn [Creating a pull request](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/creating-an-issue-or-pull-request).
+4. **This step is required for everyone.** Zip the entire project folder to a .zip file and submit it on Canvas/Assignments/Assignment 2. Submit the URL to your project github repository in the comment area on Canvas.
+
+---
+*updated: 10/12/2020*
