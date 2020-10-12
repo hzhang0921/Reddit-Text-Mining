@@ -25,9 +25,9 @@ You should read this document in a somewhat non-linear/spiral fashion:
 
 ### Teaming Logistics:
 
-- You can work in a team of exactly two students or work individually.
+- You can work in a team of **exactly two students** or work **individually**.
 - Your partner cannot be in the same term-project team with you.
-- Only one of you should fork the base repo for this assignment. The one that forks the repo should then add the other team member as a collaborator on Github for that repo.
+- **Only one** of you should fork the base repo for this assignment. The one that forks the repo should then **invite** the other team member to the repository. 
 
 ---
 ## Part 1: Harvesting text from the Internet
