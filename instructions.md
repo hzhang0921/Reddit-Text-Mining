@@ -25,8 +25,9 @@ You should read this document in a somewhat non-linear/spiral fashion:
 
 ### Teaming Logistics:
 
-- You can work in a team of **exactly two students** or work **individually**.
-- Your partner cannot be in the same term-project team with you.
+- ~~You can work in a team of **exactly two students** or work **individually**.~~
+- ~~Your partner cannot be in the same term-project team with you.~~
+- If your team has more than 3 members, please divide your team to two groups.  
 - **Only one** of you should fork the base repo for this assignment. The one that forks the repo should then **invite** the other team member to the repository. 
 
 ---
@@ -53,7 +54,7 @@ Note, that there is a preamble (boiler plate on Project Gutenberg, table of cont
 
 ### Data Source: Wikipedia
 
-Another source of data that you can easily access and parse is Wikipedia. You can use mediawiki package (<https://github.com/barrust/mediawiki>) to search Wikipedia, get article summaries, get data like links and images from a page, and more. To get this pacakge, run the following command in **Command Prompt**:
+Another source of data that you can easily access and parse is Wikipedia. You can use mediawiki package (<https://github.com/barrust/mediawiki>) to search Wikipedia, get article summaries, get data like links and images from a page, and more. To get this package, run the following command in **Command Prompt**:
 
 ```
 pip install pymediawiki
@@ -85,14 +86,15 @@ See more properties for a page in documentation(<https://pymediawiki.readthedocs
 
 ### Data Source: Twitter
 
-To search Twitter, you need first create a new application in Twitter Apps(<https://apps.twitter.com/>). Then you need a Python library <code>twython</code> (another choice is <code>tweepy</code>), which you can install by running the following command in **Command Prompt**:
+To search Twitter, you need first create a new application in Twitter Apps(<https://apps.twitter.com/>). Then you need a Python library `tweepy` (another choice is `twython`), which you can install by running the following command in **Command Prompt**:
 
+To use Twitter API, you need to apply to Twitter for a developer account and explain the purpose of what you are doing with the data and Twitter will manually review it which usually take several days. If you decide to use 
 ```
 pip install twython
 ```
-Here is a simple example for searching tweets containing <code>Patriots</code>:
+Here is a simple example for searching tweets containing `Patriots`:
 ```
-from twython import Twython
+import tweepy
 
 # Replace the following strings with your own keys and secrets
 TOKEN = 'Your TOKEN'
@@ -100,30 +102,31 @@ TOKEN_SECRET = 'Your TOKEN_SECRET'
 CONSUMER_KEY = 'Your CONSUMER_KEY'
 CONSUMER_SECRET = 'Your CONSUMER_SECRET'
 
+# Authenticate to Twitter
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(CONSUMER_KEY,TOKEN_SECRET)
 
-t = Twython(CONSUMER_KEY, CONSUMER_SECRET,
-   TOKEN, TOKEN_SECRET)
+api = tweepy.API(auth)
 
-data = t.search(q="New England Patriots", count=50)
+for tweet in api.search(q="covid vaccine", lang="en", rpp=10):
+    print(f"{tweet.user.name}: {tweet.text}")
 
-
-for status in data['statuses']:
-    print(status['text'])
 
 ```
 
 When I ran this program the other day I got the following output:
 ```
-The Buffalo Bills' game with Tennessee remains on schedule for Tuesday night after the Titans had no positives Mond… https://t.co/IFk6CQQFPk
-#Broncos debate: Does Denver or New England get more benefit by delaying game (again)? https://t.co/GSD4WkNXlj via @denverpost
-Purtroppo la ⁦@NFL⁩ ha deciso (forse non ha potuto) di non giocare in the bubble e forse si dovrà fermare. I miei ⁦… https://t.co/YiXNNOF9Lu
-RT @easyjanjansen: Sources -- NFL shuts down New England Patriots' facility for 3rd time in 10 days after new positive coronavirus test - E…
-RT @NYDailyNews: The NFL shut down the New England Patriots' facility after one more positive COVID-19 test came back Sunday morning.
+Phyllis P. Speen: Having been in the first class of freshman women Babson College  in 1970 I thought we cleared the path. No barriers… https://t.co/MnmDhtkh65
+Mike Limpach: RT @MuscoGreg: “We are thrilled to have Musco as our light provider. Our experience has been amazing. We have one of the best environments…
+DS Career Center: HIRING Regional Advancement Officer: The Regional Advancement Officer will be responsible for advancing relationshi… https://t.co/ZOQLN9bBTM
+Women’s Fastpitch Athlete’s Association of America: RT @greeknationalSB: Tomorrow (3/8) we will be having our forth Instagram Story Takeover! Make sure to tune in with Kate Karamouzis as she…
+Global Entrepreneurship Monitor: GEM research highlighted on @DeutscheWelle TV via this interview with @Babson College and GEM researcher Amanda Ela… https://t.co/Px0x4a4a8E
+Greg Smidt: “We are thrilled to have Musco as our light provider. Our experience has been amazing. We have one of the best envi… https://t.co/ltS4ucyxOx
 ...
 ```
 
 ### Data Source: Reddit
-To get reddit data, you need to install Python PRAW package by running the following command in **Command Prompt**:
+To get reddit data, you need to install Python [PRAW package](https://github.com/praw-dev/praw) by running the following command in **Command Prompt**:
 
 ```
 pip install praw
@@ -182,7 +185,7 @@ There are many other data sources that you can find:
 
 ### Pickling Data
 
-For several of these data sources you might find that the API calls take a pretty long time to return, or that you run into various API limits. To deal with this, you will want to save the data that you collect from these services so that the data can be loaded back at a later point in time. Suppose you have a bunch of Project Gutenberg texts in a list called <code>charles_dickens_texts</code>. You can save this list to disk and then reload it using the following code:
+For several of these data sources you might find that the API calls take a pretty long time to return, or that you run into various API limits. To deal with this, you will want to save the data that you collect from these services so that the data can be loaded back at a later point in time. Suppose you have a bunch of Project Gutenberg texts in a list called `charles_dickens_texts`. You can save this list to disk and then reload it using the following code:
 ```
 import pickle
 
@@ -303,10 +306,10 @@ Also discuss your team process in your reflection. How did you plan to divide th
 
 1. Push your completed code to Github repository (depending on which team member's repository is being used to work on the project).
 2. Submit your Project Writeup/Reflection (1 per team, not 1 per person). This can be in the form of either:
-    + a PDF document pushed to GitHub, or
+    + a Markdown document pushed to GitHub, or
     + a project web page (if you choose this route, make sure there is a link to your web page in your `README.md` file in your Github repo.)
 3. Create a pull request to the upstream repository. Learn [Creating a pull request](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/creating-an-issue-or-pull-request).
 4. **This step is required for everyone.** Zip the entire project folder to a .zip file and submit it on Canvas/Assignments/Assignment 2. Submit the URL to your project github repository in the comment area on Canvas.
 
 ---
-*updated: 10/12/2020*
+*updated: 3/9/2021*
