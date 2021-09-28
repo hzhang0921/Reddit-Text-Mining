@@ -44,7 +44,7 @@ In order to download a book from Project Gutenberg you should first use their se
 ```
 import urllib.request
 
-url = 'http://www.gutenberg.org/ebooks/730.txt.utf-8'
+url = 'https://www.gutenberg.org/files/730/730-0.txt'
 response = urllib.request.urlopen(url)
 data = response.read()  # a `bytes` object
 text = data.decode('utf-8')
@@ -82,11 +82,11 @@ Babson College is a private business school in Wellesley, Massachusetts. Establi
 ...
 ```
 
-See more properties for a page in documentation(<https://pymediawiki.readthedocs.io/en/latest/quickstart.html#other-properties>).
+See more properties for a page in [documentation](https://pymediawiki.readthedocs.io/en/latest/quickstart.html#other-properties).
 
 ### Data Source: Twitter
 
-To search Twitter, you need first create a new application in Twitter Apps(<https://apps.twitter.com/>). Then you need a Python library `tweepy` (another choice is `twython`), which you can install by running the following command in **Command Prompt**:
+To search Twitter, you need first create a new application in [Twitter Apps](https://developer.twitter.com/en/apps). Then you need a Python library `tweepy` (another choice is `twython`), which you can install by running the following command in **Command Prompt**:
 
 To use Twitter API, you need to apply to Twitter for a developer account and explain the purpose of what you are doing with the data and Twitter will manually review it which usually take several days. If you decide to use 
 ```
@@ -131,7 +131,7 @@ To get reddit data, you need to install Python [PRAW package](https://github.com
 ```
 pip install praw
 ```
-Here's an example from the PRAW docs page (<https://praw.readthedocs.io/en/stable/getting_started/quick_start.html>):
+Here's an example from the [PRAW docs page](https://praw.readthedocs.io/en/stable/getting_started/quick_start.html):
 ```
 import praw
 import config
@@ -145,10 +145,10 @@ submissions = reddit.subreddit(sub).top('day', limit=5)
 top5 = [(submission.title, submission.selftext) for submission in submissions]
 ```
 
-### SMS Spam Collection
-This collection(<http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/>) is composed by 5,574 English, real and non-enconded messages, tagged according being legitimate (ham) or spam. You can download data this link (<http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/smsspamcollection.zip>). 
+### Data Source: SMS Spam Collection
+This [collection](http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/) is composed by 5,574 English, real and non-enconded messages, tagged according being legitimate (ham) or spam. You can download data this [link](http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/smsspamcollection.zip). 
 
-### IMDB Movie Reviews
+### Data Source: IMDB Movie Reviews
 To get IMDB data, you need to install Python imdbpie package by running the following command in **Command Prompt**:
 ```
 pip install imdbpie
@@ -169,7 +169,7 @@ print(reviews['reviews'][0]['reviewText'])
 
 ```
 
-### More Data Sources
+### Data Source: More Data Sources
 
 There are many other data sources that you can find:
 
@@ -177,10 +177,11 @@ There are many other data sources that you can find:
 - DBPedia
 - Google search
 - Bing search
-- Enron email dataset (<https://www.cs.cmu.edu/~./enron/>)
-- TripAdvisor dataset (<http://times.cs.uiuc.edu/~wang296/Data/>)
-- Yelp dataset (<https://www.yelp.com/dataset_challenge>)
-- News articles (<https://archive.ics.uci.edu/ml/datasets/Reuters-21578+Text+Categorization+Collection>)
+- [Enron email dataset](https://www.cs.cmu.edu/~./enron/)
+- [TripAdvisor dataset](http://times.cs.uiuc.edu/~wang296/Data/)
+- [Yelp dataset](https://www.yelp.com/dataset)
+- [News articles](https://archive.ics.uci.edu/ml/datasets/Reuters-21578+Text+Categorization+Collection)
+- [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets)
 - ...
 
 ### Pickling Data
@@ -206,20 +207,21 @@ The result of running this code is that all of the texts in the list variable `c
 
 ### Characterizing by Word Frequencies
 
-One way to begin to process your text is to take each unit of text (for instance a book from Project Gutenberg, or perhaps a collection of movie reviews and summarize it by counting the number of times a particular word appears in the text. A natural way to approach this in Python would be to use a dictionary where the keys are words that appear and the values are frequencies of words in the text (if you want to do something fancier look into using TF-IDF features (<https://en.wikipedia.org/wiki/Tf%E2%80%93idf>)).
+One way to begin to process your text is to take each unit of text (for instance a book from Project Gutenberg, or perhaps a collection of movie reviews and summarize it by counting the number of times a particular word appears in the text.) A natural way to approach this in Python would be to use a dictionary where the keys are words that appear and the values are frequencies of words in the text (if you want to do something fancier look into using [TF-IDF features](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
 
 ### Computing Summary Statistics
 Beyond simply calculating word frequencies there are some other ways to summarize the words in a text. For instance, what are the top 10 words in each text? What are the words that appear the most in each text that don't appear in other texts? 
 
+
 ### Doing Natural Language Processing
-NLTK - the Natural Language Toolkit (<https://www.nltk.org/>) is a leading platform for building Python programs to work with human language data. It provides some really cool natural language processing capabilities. Some examples include: part of speech tagging, sentiment analysis, and full sentence parsing. 
+[NLTK](https://www.nltk.org/) - the Natural Language Toolkit - is a leading platform for building Python programs to work with human language data. It provides some really cool natural language processing capabilities. Some examples include: part of speech tagging, sentiment analysis, and full sentence parsing. 
 
 To use NLTK, you need to install nltk by running the following command in **Command Prompt**:
 
 ```
 pip install nltk
 ```
-Here is an example of doing sentiment analysis (<https://en.wikipedia.org/wiki/Sentiment_analysis>):
+Here is an example of doing [sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis):
 ```
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
@@ -239,7 +241,7 @@ It is potentially quite useful to be able to compute the similarity of two texts
 
 ### Text Clustering
 
-If you can generate pairwise similarities (say using the technique above), you can Metric Multi-dimensional Scaling (MDS) to visualize the texts in a two dimensional space. This can help identify clusters of similar texts. 
+If you can generate pairwise similarities (say using the technique above), you can Metric Multi-dimensional Scaling (MDS) to visualize the texts in a 2-dimensional space. This can help identify clusters of similar texts. 
 
 In order to apply MDS to your data, you can use the machine learning toolkit scikit-learn. Here is some code that uses the similarity matrix defined in the previous section to create a 2-dimensional embedding of the four Charles Dickens and 1 Charles Darwin texts.
 
@@ -276,7 +278,7 @@ This will generate the following plot. The coordinates don't have any special me
 
 
 ### Markov Text Synthesis
-You can use Markov analysis to learn a generative model of the text that you collect from the web and use it to generate new texts. You can even use it to create mashups of multiple texts. One of possibilities in this space would be to to create literary mashups automatically. Again, let professor know if you go this route and we can provide more guidance.
+You can use Markov analysis to learn a generative model of the text that you collect from the web and use it to generate new texts. You can even use it to create mashups of multiple texts. One of possibilities in this space would be to create literary mashups automatically. Again, let professor know if you go this route and we can provide more guidance.
 
 
 ---
@@ -304,12 +306,14 @@ Also discuss your team process in your reflection. How did you plan to divide th
 ---
 ## Turning in your assignment
 
-1. Push your completed code to Github repository (depending on which team member's repository is being used to work on the project).
+1. Push your completed code to GitGub repository (depending on which team member's repository is being used to work on the project).
 2. Submit your Project Writeup/Reflection (1 per team, not 1 per person). This can be in the form of either:
-    + a Markdown document pushed to GitHub, or
-    + a project web page (if you choose this route, make sure there is a link to your web page in your `README.md` file in your Github repo.)
-3. Create a pull request to the upstream repository. Learn [Creating a pull request](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/creating-an-issue-or-pull-request).
-4. **This step is required for everyone.** Zip the entire project folder to a .zip file and submit it on Canvas/Assignments/Assignment 2. Submit the URL to your project github repository in the comment area on Canvas.
+    - a **Markdown** document pushed to GitHub, or
+    - a project **web page** 
+   
+   Make sure there is a link to your reflection document in your _README.md_ file in your GitHub repo. Or you could use _README.md_ file to write reflection.
+3. Create a pull request to the upstream repository. Learn [Creating a pull request](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request).
+4. **(This step is required for everyone)** Submit the URL to your project GitHub repository in the comment area on Canvas.
 
 ---
-*updated: 3/9/2021*
+*updated: 9/28/2021*
