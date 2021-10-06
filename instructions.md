@@ -238,6 +238,20 @@ If you perform some natural language processing, you may be able to say somethin
 ### Text Similarity
 It is potentially quite useful to be able to compute the similarity of two texts. Suppose that we have characterized some texts from Project Gutenberg using word frequency analysis. One way to compute the similarity of two texts is to test to what extent when one text has a high count for a particular word the other text also a high count for a particular word. Specifically, we can compute the cosine similarity between the two texts. This strategy involves thinking of the word counts for each text as being high-dimensional vectors where the number of dimensions is equal to the total number of unique words in your text dataset and the entry in a particular element of the vector is the count of how frequently the corresponding word appears in a specific document (if this is a bit vague and you want to try this approach, send professor a slack DM or an e-mail).
 
+For a simple text similarity task, you can use [`TheFuzz` library](https://github.com/seatgeek/thefuzz), which uses [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance) to calculate the differences between sequences.
+
+```python
+>>> from thefuzz import fuzz
+>>> fuzz.ratio("this is a test", "this is a test!")
+    97
+>>> fuzz.partial_ratio("this is a test", "this is a test!")
+    100
+>>> fuzz.ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear")
+    91
+>>> fuzz.token_sort_ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear")
+    100
+```
+
 
 ### Text Clustering
 
