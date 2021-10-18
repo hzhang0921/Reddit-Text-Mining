@@ -310,7 +310,7 @@ plt.show()
 ```
 
 This will generate the following plot. The coordinates don't have any special meaning, but the embedding tries to maintain the similarity relationships that we computed via comparing word frequencies. Keep in mind that the point labeled 4 is the work by Charles Darwin.
-![text_clustering](text_clustering.png)
+![text_clustering](images/text_clustering.png)
 
 
 ### Markov Text Synthesis
