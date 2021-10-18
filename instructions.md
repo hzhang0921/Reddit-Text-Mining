@@ -21,7 +21,13 @@ You should read this document in a somewhat non-linear/spiral fashion:
 1. Scan through Part 1 to get a sense of what data sources are available. Try grabbing text from one of the sources that interests you. You do not need to try all the data sources.
 2. Scan through Part 2 to see a bunch of cool examples for what you can do with your text.
 3. Choose (at least) one data source from Part 1 or elsewhere and analyze/manipulate/transform that text using technique(s) from Part 2 or elsewhere.
-4. Write a brief document about what you did (Part 3)
+4. Use the `if __name__ == "__main__"` idiom in the _.py_ file (or the entry _.py_ file if you create multiple _.py_ files)
+   ```
+   if __name__ == "__main__":
+       main()
+   ```
+   In other words, I will only run the entry Python file to test your code. 
+5. Write a brief document about what you did (Part 3)
 
 ### Teaming Logistics:
 
@@ -145,6 +151,22 @@ submissions = reddit.subreddit(sub).top('day', limit=5)
 top5 = [(submission.title, submission.selftext) for submission in submissions]
 ```
 
+### Data Source: Newspaper Articles
+You can use `Newspaper3k` package to scrape and curate news articles. You need to install Python [Newspaper3k package](https://github.com/codelucas/newspaper) by running the following command in **Command Prompt**:
+
+```
+pip install newspaper
+```
+Here's an example from the [Newspaper3k docs page](https://newspaper.readthedocs.io/en/latest/):
+```
+>>> from newspaper import Article
+
+>>> url = 'http://fox13now.com/2013/12/30/new-year-new-laws-obamacare-pot-guns-and-drones/'
+>>> article = Article(url)
+>>> article.text
+'Washington (CNN) -- Not everyone subscribes to a New Year's resolution...'
+```
+
 ### Data Source: SMS Spam Collection
 This [collection](http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/) is composed by 5,574 English, real and non-enconded messages, tagged according being legitimate (ham) or spam. You can download data this [link](http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/smsspamcollection.zip). 
 
@@ -240,7 +262,7 @@ It is potentially quite useful to be able to compute the similarity of two texts
 
 For a simple text similarity task, you can use [`TheFuzz` library](https://github.com/seatgeek/thefuzz), which uses [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance) to calculate the differences between sequences.
 
-```python
+```
 >>> from thefuzz import fuzz
 >>> fuzz.ratio("this is a test", "this is a test!")
     97
@@ -330,4 +352,4 @@ Also discuss your team process in your reflection. How did you plan to divide th
 4. **(This step is required for everyone)** Submit the URL to your project GitHub repository in the comment area on Canvas.
 
 ---
-*updated: 9/28/2021*
+*updated: 10/18/2021*
