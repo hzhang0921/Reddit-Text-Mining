@@ -1,3 +1,3 @@
 # text-mining
 
-Please read [instructions](instructions.md).
+Please read the [instructions](instructions.md).
