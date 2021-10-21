@@ -2,7 +2,7 @@
  
 ## Introduction
 
-In this project you will learn how to use computational techniques to analyze text. Specifically, you will access text from the web and social media (such as Twitter), run some sort of computational analysis on it, and create some sort of deliverable (either some interesting results from a text analysis, a visualization of some kind, or perhaps a computer program that manipulates language in some interesting way). You will be working with a partner on this assignment. 
+In this project you will learn how to use computational techniques to analyze text. Specifically, you will access text from the web and social media (such as Twitter), run some sort of computational analysis on it, and create some sort of deliverable (either some interesting results from a text analysis, a visualization of some kind, or perhaps a computer program that manipulates language in some interesting way). ~~You will be working with a partner on this assignment.~~ This assignment is an **individual** project.
 
 **Skills Emphasized**:
 
@@ -14,7 +14,7 @@ In this project you will learn how to use computational techniques to analyze te
 ---
 ## How to proceed
 
-In order to get started on the assignment, you should fork this base repository. Once you've forked the repository, clone the repository on your computer.
+In order to get started on the assignment, you should **fork** this base repository. Once you've forked the repository, **clone** the repository on your computer.
 
 You should read this document in a somewhat non-linear/spiral fashion:
 
@@ -28,13 +28,14 @@ You should read this document in a somewhat non-linear/spiral fashion:
    ```
    In other words, I will only run the entry Python file to test your code. 
 5. Write a brief document about what you did (Part 3)
+6. **NOTICE:** If you use any code that is not written by you (or that you learn from other places such as StackOverFlow/GitHub), please add Python comments (before the block of code) describing where you get/learn it . 
 
-### Teaming Logistics:
+### ~~Teaming Logistics:~~
 
 - ~~You can work in a team of **exactly two students** or work **individually**.~~
 - ~~Your partner cannot be in the same term-project team with you.~~
-- If your team has more than 3 members, please divide your team to two groups.  
-- **Only one** of you should fork the base repo for this assignment. The one that forks the repo should then **invite** the other team member to the repository. 
+- ~~If your team has more than 3 members, please divide your team to two groups.~~  
+- ~~**Only one** of you should fork the base repo for this assignment. The one that forks the repo should then **invite** the other team member to the repository.~~
 
 ---
 ## Part 1: Harvesting text from the Internet
@@ -321,7 +322,7 @@ You can use Markov analysis to learn a generative model of the text that you col
 ## Part 3: Project Writeup and Reflection
 Please prepare a short (suggested lengths given below) document with the following sections:
 
-**1. Project Overview** [Maximum 100 words]
+**1. Project Overview** [~1 paragraph]
 What data source(s) did you use and what technique(s) did you use analyze/process them? What did you hope to learn/create?
 
 **2. Implementation** [~2-3 paragraphs]
@@ -335,21 +336,21 @@ Present what you accomplished:
 
 
 **4. Reflection** [~1 paragraph]
-From a process point of view, what went well? What could you improve? Other possible reflection topics: Was your project appropriately scoped? Did you have a good plan for unit testing? How will you use what you learned going forward? What do you wish you knew before you started that would have helped you succeed?
+From a process point of view, what went well? What could you improve? Other possible reflection topics: Was your project appropriately scoped? Did you have a good plan for testing? How will you use what you learned going forward? What do you wish you knew before you started that would have helped you succeed?
 
-Also discuss your team process in your reflection. How did you plan to divide the work (e.g. split by task, always pair program together, etc.) and how did it actually happen? Were there any issues that arose while working together, and how did you address them? What would you do differently next time?
+~~Also discuss your team process in your reflection. How did you plan to divide the work (e.g. split by task, always pair program together, etc.) and how did it actually happen? Were there any issues that arose while working together, and how did you address them? What would you do differently next time?~~
 
 ---
 ## Turning in your assignment
 
 1. Push your completed code to GitGub repository (depending on which team member's repository is being used to work on the project).
-2. Submit your Project Writeup/Reflection (1 per team, not 1 per person). This can be in the form of either:
+2. Submit your Project Writeup/Reflection ~~(1 per team, not 1 per person)~~. This can be in the form of either:
     - a **Markdown** document pushed to GitHub, or
-    - a project **web page** 
+    - a **web page** 
    
    Make sure there is a link to your reflection document in your _README.md_ file in your GitHub repo. Or you could use _README.md_ file to write reflection.
 3. Create a pull request to the upstream repository. Learn [Creating a pull request](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request).
 4. **(This step is required for everyone)** Submit the URL to your project GitHub repository in the comment area on Canvas.
 
 ---
-*updated: 10/18/2021*
+*updated: 10/21/2021*
