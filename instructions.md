@@ -156,7 +156,7 @@ top5 = [(submission.title, submission.selftext) for submission in submissions]
 You can use `Newspaper3k` package to scrape and curate news articles. You need to install Python [Newspaper3k package](https://github.com/codelucas/newspaper) by running the following command in **Command Prompt**:
 
 ```
-pip install newspaper
+pip install newspaper3k
 ```
 Here's an example from the [Newspaper3k docs page](https://newspaper.readthedocs.io/en/latest/):
 ```
