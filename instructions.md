@@ -232,7 +232,7 @@ The result of running this code is that all of the texts in the list variable `c
 
 ### Characterizing by Word Frequencies
 
-One way to begin to process your text is to take each unit of text (for instance a book from Project Gutenberg, or perhaps a collection of movie reviews and summarize it by counting the number of times a particular word appears in the text.) A natural way to approach this in Python would be to use a dictionary where the keys are words that appear and the values are frequencies of words in the text (if you want to do something fancier look into using [TF-IDF features](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
+One way to begin to process your text is to take each unit of text (for instance a book from Project Gutenberg, or perhaps a collection of movie reviews and summarize it by counting the number of times a particular word appears in the text.) A natural way to approach this in Python would be to use a dictionary where the keys are words that appear and the values are frequencies of words in the text (if you want to do something fancier look into using [TF-IDF features](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)).
 
 ### Computing Summary Statistics
 Beyond simply calculating word frequencies there are some other ways to summarize the words in a text. For instance, what are the top 10 words in each text? What are the words that appear the most in each text that don't appear in other texts? 
@@ -355,4 +355,4 @@ From a process point of view, what went well? What could you improve? Other poss
 4. **(This step is required for everyone)** Submit the URL to your project GitHub repository in the comment area on Canvas.
 
 ---
-*updated: 10/21/2021*
+*updated: 03/09/2022*
