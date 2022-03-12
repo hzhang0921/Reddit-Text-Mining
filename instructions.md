@@ -115,7 +115,7 @@ auth.set_access_token(TOKEN,TOKEN_SECRET)
 
 api = tweepy.API(auth)
 
-for tweet in api.search_tweets(q="babson college", lang="en", rpp=10):
+for tweet in api.search_tweets(q="babson college", lang="en", count=10):
     print(f"{tweet.user.name}: {tweet.text}")
 ```
 
