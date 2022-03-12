@@ -111,26 +111,14 @@ CONSUMER_SECRET = 'Your CONSUMER_SECRET'
 
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(CONSUMER_KEY,TOKEN_SECRET)
+auth.set_access_token(TOKEN,TOKEN_SECRET)
 
 api = tweepy.API(auth)
 
-for tweet in api.search(q="covid vaccine", lang="en", rpp=10):
+for tweet in api.search_tweets(q="babson college", lang="en", rpp=10):
     print(f"{tweet.user.name}: {tweet.text}")
-
-
 ```
 
-When I ran this program the other day I got the following output:
-```
-Phyllis P. Speen: Having been in the first class of freshman women Babson College  in 1970 I thought we cleared the path. No barriers… https://t.co/MnmDhtkh65
-Mike Limpach: RT @MuscoGreg: “We are thrilled to have Musco as our light provider. Our experience has been amazing. We have one of the best environments…
-DS Career Center: HIRING Regional Advancement Officer: The Regional Advancement Officer will be responsible for advancing relationshi… https://t.co/ZOQLN9bBTM
-Women’s Fastpitch Athlete’s Association of America: RT @greeknationalSB: Tomorrow (3/8) we will be having our forth Instagram Story Takeover! Make sure to tune in with Kate Karamouzis as she…
-Global Entrepreneurship Monitor: GEM research highlighted on @DeutscheWelle TV via this interview with @Babson College and GEM researcher Amanda Ela… https://t.co/Px0x4a4a8E
-Greg Smidt: “We are thrilled to have Musco as our light provider. Our experience has been amazing. We have one of the best envi… https://t.co/ltS4ucyxOx
-...
-```
 
 ### Data Source: Reddit
 To get reddit data, you need to install Python [PRAW package](https://github.com/praw-dev/praw) by running the following command in **Command Prompt**:
