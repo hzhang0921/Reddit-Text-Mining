@@ -162,24 +162,24 @@ Here's an example from the [Newspaper3k docs page](https://newspaper.readthedocs
 This [collection](http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/) is composed by 5,574 English, real and non-enconded messages, tagged according being legitimate (ham) or spam. You can download data this [link](http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/smsspamcollection.zip). 
 
 ### Data Source: IMDB Movie Reviews
-To get IMDB data, you need to install Python imdbpie package by running the following command in **Command Prompt**:
+To get IMDB data, you need to install Python `cinemagoer` package by running the following command in **Command Prompt**:
 ```
-pip install imdbpie
+pip install cinemagoer
 ```
 Here's an example to print the first review of the movie 'The Dark Knight':
 ```
-from imdbpie import Imdb
+from imdb import Cinemagoer
 
-imdb = Imdb()
-print(imdb.search_for_title("The Dark Knight")[0])
-reviews = imdb.get_title_user_reviews("tt0468569")
+# create an instance of the Cinemagoer class
+ia = Cinemagoer()
 
-# import pprint
-# pprint.pprint(reviews)
+# search movie
+movie = ia.search_movie("The Dark Knight")[0]
+print(movie.movieID)
+# '0468569'
 
-print(reviews['reviews'][0]['author']['displayName'])
-print(reviews['reviews'][0]['reviewText'])
-
+movie_reviews = ia.get_movie_reviews('0468569')
+print(movie_reviews['data']['reviews'][0]['content'])
 ```
 
 ### Data Source: More Data Sources
