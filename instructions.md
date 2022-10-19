@@ -28,7 +28,7 @@ You should read this document in a somewhat non-linear/spiral fashion:
    ```
    In other words, I will only run the entry Python file to test your code. 
 5. Write a brief document about what you did (Part 3)
-6. **NOTICE:** If you use any code that is not written by you (or that you learn from other places such as StackOverFlow/GitHub), please add Python comments (before the block of code) describing where you get/learn it . 
+6. **NOTICE:** If you use any code that is not written by you (or that you learn from other places such as StackOverFlow/GitHub), please add Python comments (before the block of code) describing where you get/learn it. 
 
 ### ~~Teaming Logistics:~~
 
@@ -52,10 +52,11 @@ In order to download a book from Project Gutenberg you should first use their se
 import urllib.request
 
 url = 'https://www.gutenberg.org/files/730/730-0.txt'
-response = urllib.request.urlopen(url)
-data = response.read()  # a `bytes` object
-text = data.decode('utf-8')
-print(text) # for testing
+with urllib.request.urlopen(url) as f:
+    response = urllib.request.urlopen(url)
+    data = response.read()  # a `bytes` object
+    text = data.decode('utf-8')
+    print(text) # for testing
 ```
 Note, that there is a preamble (boiler plate on Project Gutenberg, table of contents, etc.) that has been added to the text that you might want to strip out (potentially using Python code) when you do your analysis (there is similar material at the end of the file). The one complication with using Project Gutenberg is that they impose a limit on how many texts you can download in a 24-hour period. So, if you are analyzing say 10 texts, you might want to download them once and load them off disk rather than fetching them off of Project Gutenberg's servers every time you run your program (see the **Pickling Data** section in session of **Files** for some relevant information on doing this). However, there are many mirrors of the Project Gutenberg site if you want to get around the download restriction.
 
@@ -65,8 +66,9 @@ Another source of data that you can easily access and parse is Wikipedia. You ca
 
 ```
 pip install pymediawiki
-
-# or python -m pip install pymediawiki
+# or
+# python -m pip install pymediawiki
+# python3 -m pip install pymediawiki # if you are using MacOS
 ```
 Given that you know the particular title of the article you would like to access, you can fetch the article and then print out its sections using the following Python program:
 
@@ -118,7 +120,6 @@ api = tweepy.API(auth)
 for tweet in api.search_tweets(q="babson college", lang="en", count=10):
     print(f"{tweet.user.name}: {tweet.text}")
 ```
-
 
 ### Data Source: Reddit
 To get reddit data, you need to install Python [PRAW package](https://github.com/praw-dev/praw) by running the following command in **Command Prompt**:
@@ -226,7 +227,7 @@ One way to begin to process your text is to take each unit of text (for instance
 Beyond simply calculating word frequencies there are some other ways to summarize the words in a text. For instance, what are the top 10 words in each text? What are the words that appear the most in each text that don't appear in other texts? 
 
 
-### Doing Natural Language Processing
+### Natural Language Processing
 [NLTK](https://www.nltk.org/) - the Natural Language Toolkit - is a leading platform for building Python programs to work with human language data. It provides some really cool natural language processing capabilities. Some examples include: part of speech tagging, sentiment analysis, and full sentence parsing. 
 
 To use NLTK, you need to install nltk by running the following command in **Command Prompt**:
@@ -315,7 +316,7 @@ Please prepare a short (suggested lengths given below) document with the followi
 **1. Project Overview** [~1 paragraph]
 What data source(s) did you use and what technique(s) did you use analyze/process them? What did you hope to learn/create?
 
-**2. Implementation** [~2-3 paragraphs]
+**2. Implementation** [~1-2 paragraphs]
 Describe your implementation at a system architecture level. You should NOT walk through your code line by line, or explain every function (we can get that from your docstrings). Instead, talk about the major components, algorithms, data structures and how they fit together. You should also discuss at least one design decision where you had to choose between multiple alternatives, and explain why you made the choice you did.
 
 **3. Results** [~2-3 paragraphs + figures/examples]
@@ -336,11 +337,13 @@ From a process point of view, what went well? What could you improve? Other poss
 1. Push your completed code to GitGub repository (depending on which team member's repository is being used to work on the project).
 2. Submit your Project Writeup/Reflection ~~(1 per team, not 1 per person)~~. This can be in the form of either:
     - a **Markdown** document pushed to GitHub, or
-    - a **web page** 
+    - a **web page**.
+
+    **Do not** use Word document or PDF file.
    
    Make sure there is a link to your reflection document in your _README.md_ file in your GitHub repo. Or you could use _README.md_ file to write reflection.
 3. Create a pull request to the upstream repository. Learn [Creating a pull request](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request).
-4. **(This step is required for everyone)** Submit the URL to your project GitHub repository in the comment area on Canvas.
+4. **(This step is required for everyone)** Submit the URL of your project GitHub repository in the comment area on Canvas.
 
 ---
-*updated: 03/09/2022*
+*updated: 10/19/2022*
